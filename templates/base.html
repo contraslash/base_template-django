@@ -8,10 +8,27 @@
     <title>{% block title %}{% endblock %}</title>
 
     {% block generic-css %}
+        <link href="https://fonts.googleapis.com/css?family=Montserrat&display=swap" rel="stylesheet">
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
         <style>
-            .container{display: flex;}
-            .row {display: flex;}
+            body{font-family: 'Montserrat', sans-serif; background-color: #dddddd}
+            form{padding: 20px;}
+            input, textarea{border-radius: 4px;font-size: 15px;margin: 0;outline: 0;padding: 10px;width: 100%;
+                box-sizing: border-box;-webkit-box-sizing: border-box;-moz-box-sizing: border-box;color:#8a97a0;
+                -webkit-box-shadow: 0 1px 0 rgba(0,0,0,0.03) inset;box-shadow: 0 1px 0 rgba(0,0,0,0.03) inset;
+                margin-bottom: 30px;}
+            .container{display: flex;flex-direction: column;}
+            .content{background-color: #eeeeee; border-radius: 10px; }
+            .center{align-items: center}
+            .end{align-items: end}
+            .row {display: flex;flex-flow: row wrap;}
             .col {flex: 1;}
+            .col > textarea {flex: 1;}
+            .btn {position: relative;width: 180px; height: 30px;overflow: hidden;border-radius: 5px;
+                z-index: 1;cursor: pointer;transition: color .3s;text-align: center;color: #fff;}
+            .btn-primary{background-color: #01579b; color: white;}
+            .btn-default{background-color: #c7c7c7; color: black;}
+            .btn-danger{background-color: #b71c1c; color: white;}
             @media (max-width: 400px) {
                 .row {display: block;}
             }
@@ -20,7 +37,7 @@
     {% block specific-css %}    {% endblock %}
 </head>
 <body>
-<div class="container">
+<div class="container center">
     {% block content %}
 
     {% endblock %}
